@@ -1,0 +1,2974 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link href='https://cdn.rawgit.com/extent-framework/extent-github-cdn/99c671a/v3html/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Automation Report</title>
+
+	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
+			.r-img { width: 3%; }
+	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+</head>
+	<body class='extent dark default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo black"><img src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png"></a>
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+		</ul>
+		<!-- report name -->
+		<span class='report-name'>Automation Report for Sync API</span>
+		<!-- report headline -->
+		<span class='report-headline'></span>
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>Apr 8, 2021 11:44:41 AM</span>
+			</a>
+		</ul>
+	</div>
+</nav>		<!-- container -->
+		<div class='container'>
+<div id='test-view' class='view'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+			<!-- category toggle -->
+			<!-- category toggle -->
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+				<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+				<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+<div id='test-view-charts' class='subview-full'>
+    <div id='charts-row' class='row nm-v nm-h'>
+        <div class='col s12 m12 l12 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Tests</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='parent-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>36</span> test(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="timeline-chart" class="row nm-v nm-h">
+        <div class="col s12 m12 l12 np-h">
+            <div class="card-panel">
+                <div class='left panel-name'>Timeline (seconds)</div>
+                <div class="chart-box" style="width:98%;max-height:145px;">
+                    <canvas id="timeline" height="120"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='test-collection' class='test-collection'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>test_001_getAllProductsRequest</span>
+						<span class='test-time'>Apr 8, 2021 11:44:41 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:44:41 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:44:44 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+514ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:44:41 AM</td>
+				<td class='step-details'>
+						Get all products attached to host via Sync App.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907484954.0,<br>    "guid": "F2498236-4546-483D-8121-A31FBA2301DE"<br>  },<br>  "response": {<br>    "productResponse": {<br>      "getAllProductsResponse": {<br>        "products": [<br>          {<br>            "uuid": "usb|vid=46d|pid=86a|location=0x14442100",<br>            "model": "MEETUP",<br>            "name": "MeetUp",<br>            "firmwarePackageVersion": "1.0.232",<br>            "devices": [<br>              {<br>                "uuid": "usb|vid=46d|pid=866|sn=B0B067EA",<br>                "name": "Logitech MeetUp",<br>                "formFactor": "MEETUP",<br>                "information": [<br>                  {<br>                    "type": "AUDIO",<br>                    "pid": 2151,<br>                    "firmwareVersion": "1.0.250",<br>                    "vid": 1133<br>                  },<br>                  {<br>                    "type": "AUDIO_CODEC",<br>                    "pid": 2151,<br>                    "firmwareVersion": "8.0.94",<br>                    "vid": 1133<br>                  },<br>                  {<br>                    "type": "AUDIO_BLE",<br>                    "pid": 2151,<br>                    "firmwareVersion": "1.0.121",<br>                    "vid": 1133<br>                  },<br>                  {<br>                    "type": "VIDEO",<br>                    "pid": 2150,<br>                    "firmwareVersion": "1.0.232",<br>                    "vid": 1133<br>                  },<br>                  {<br>                    "type": "EEPROM",<br>                    "pid": 2150,<br>                    "firmwareVersion": "1.15",<br>                    "vid": 1133<br>                  }<br>                ]<br>              }<br>            ],<br>            "connectionState": "SYNC_CONNECTION_STATE_ONLINE",<br>            "updateState": "SYNC_UPDATE_STATE_AVAILABLE",<br>            "scheduledUpdate": {},<br>            "rightSightConfiguration": {<br>              "enabled": true,<br>              "status": "OK",<br>              "lastModified": "1617906845548"<br>            }<br>          },<br>          {<br>            "uuid": "usb|vid=46d|pid=88b|location=0x14442200",<br>            "model": "RALLY",<br>            "name": "Rally",<br>            "firmwarePackageVersion": "1.1.103",<br>            "devices": [<br>              {<br>                "uuid": "usb|vid=46d|pid=885|sn=20180C2109861271",<br>                "name": "Rally Display Hub",<br>                "formFactor": "RALLY_TV_HUB",<br>                "properties": {<br>                  "2": "44:73:d6:0e:d5:7c"<br>                },<br>                "information": [<br>                  {<br>                    "type": "AUDIO",<br>                    "pid": 2181,<br>                    "firmwareVersion": "1.1.76",<br>                    "vid": 1133<br>                  },<br>                  {<br>                    "type": "VALENS",<br>                    "pid": 2186,<br>                    "firmwareVersion": "7.4.47",<br>                    "vid": 1133<br>                  },<br>                  {<br>                    "type": "AUDIO_BLE",<br>                    "pid": 2181,<br>                    "firmwareVersion": "2.0.158",<br>                    "vid": 1133<br>                  }<br>                ],<br>                "updateState": "SYNC_UPDATE_STATE_CURRENT",<br>                "connectionState": "SYNC_CONNECTION_STATE_ONLINE"<br>              },<br>              {<br>                "uuid": "0xaabb",<br>                "name": "Rally Left Speaker",<br>                "formFactor": "RALLY_SPEAKER",<br>                "properties": {<br>                  "1": "0"<br>                },<br>                "information": [<br>                  {<br>                    "type": "SELF",<br>                    "vid": 1133<br>                  }<br>                ],<br>                "connectionState": "SYNC_CONNECTION_STATE_ONLINE"<br>              },<br>              {<br>                "uuid": "usb|vid=46d|pid=88f|location=0x14442220",<br>                "name": "Rally Table Hub",<br>                "formFactor": "RALLY_TABLE_HUB",<br>                "isConnectedToHost": true,<br>                "information": [<br>                  {<br>                    "type": "SELF",<br>                    "pid": 2191,<br>                    "firmwareVersion": "1.1.253",<br>                    "vid": 1133<br>                  },<br>                  {<br>                    "type": "VALENS",<br>                    "pid": 2191,<br>                    "firmwareVersion": "7.4.47",<br>                    "vid": 1133<br>                  }<br>                ],<br>                "updateState": "SYNC_UPDATE_STATE_CURRENT",<br>                "connectionState": "SYNC_CONNECTION_STATE_ONLINE"<br>              },<br>              {<br>                "uuid": "0x0031",<br>                "name": "Rally Mic Pod Hub",<br>                "formFactor": "RALLY_MIC_POD_HUB",<br>                "information": [<br>                  {<br>                    "type": "SELF",<br>                    "firmwareVersion": "1.0.1032",<br>                    "vid": 1133<br>                  }<br>                ],<br>                "updateState": "SYNC_UPDATE_STATE_CURRENT",<br>                "connectionState": "SYNC_CONNECTION_STATE_ONLINE"<br>              },<br>              {<br>                "uuid": "0x0021",<br>                "name": "Rally Mic Pod",<br>                "formFactor": "RALLY_MIC_POD",<br>                "information": [<br>                  {<br>                    "type": "SELF",<br>                    "firmwareVersion": "1.0.1048",<br>                    "vid": 1133<br>                  }<br>                ],<br>                "updateState": "SYNC_UPDATE_STATE_CURRENT",<br>                "connectionState": "SYNC_CONNECTION_STATE_ONLINE"<br>              },<br>              {<br>                "uuid": "0x0022",<br>                "name": "Rally Mic Pod",<br>                "formFactor": "RALLY_MIC_POD",<br>                "information": [<br>                  {<br>                    "type": "SELF",<br>                    "firmwareVersion": "1.0.1048",<br>                    "vid": 1133<br>                  }<br>                ],<br>                "updateState": "SYNC_UPDATE_STATE_CURRENT",<br>                "connectionState": "SYNC_CONNECTION_STATE_ONLINE"<br>              },<br>              {<br>                "uuid": "usb|vid=46d|pid=881|sn=C0C5D553",<br>                "name": "Rally Camera",<br>                "formFactor": "RALLY_CAMERA",<br>                "information": [<br>                  {<br>                    "type": "VIDEO",<br>                    "pid": 2177,<br>                    "firmwareVersion": "1.1.183",<br>                    "vid": 1133<br>                  },<br>                  {<br>                    "type": "EEPROM",<br>                    "firmwareVersion": "1.28",<br>                    "vid": 1133<br>                  },<br>                  {<br>                    "type": "VIDEO_BLE",<br>                    "firmwareVersion": "2.106",<br>                    "vid": 1133<br>                  }<br>                ],<br>                "updateState": "SYNC_UPDATE_STATE_CURRENT",<br>                "connectionState": "SYNC_CONNECTION_STATE_ONLINE"<br>              }<br>            ],<br>            "serialNumber": "088f:20181221:4473d62395b0",<br>            "connectionState": "SYNC_CONNECTION_STATE_ONLINE",<br>            "updateState": "SYNC_UPDATE_STATE_AVAILABLE",<br>            "scheduledUpdate": {},<br>            "rightSightConfiguration": {<br>              "status": "OK"<br>            }<br>          },<br>          {<br>            "uuid": "usb|vid=46d|pid=8a4|location=0x244000",<br>            "model": "RALLY_BAR",<br>            "name": "Rally Bar",<br>            "firmwarePackageVersion": "10.5.540",<br>            "devices": [<br>              {<br>                "uuid": "usb|vid=46d|pid=898|sn=2049FH1100G20000",<br>                "name": "Rally Bar",<br>                "formFactor": "AUDIO",<br>                "information": [<br>                  {<br>                    "type": "AUDIO",<br>                    "pid": 2200,<br>                    "firmwareVersion": "1.0.564",<br>                    "vid": 1133<br>                  }<br>                ],<br>                "updateState": "SYNC_UPDATE_STATE_CURRENT",<br>                "connectionState": "SYNC_CONNECTION_STATE_ONLINE"<br>              },<br>              {<br>                "uuid": "usb|vid=46d|pid=89b|sn=2049FH1009F2",<br>                "name": "Rally Bar",<br>                "formFactor": "VIDEO_CAMERA",<br>                "properties": {<br>                  "6": "1.0.78",<br>                  "12": "{\"ip\":{\"mode\":\"dhcp\"},\"ipv6\":{\"mode\":\"dhcp\"},\"proxy\":{\"mode\":\"none\"},\"status\":-1,\"ts\":1617826406665}",<br>                  "9": "16.0.0",<br>                  "5": "170.170.48059",<br>                  "11": "1.2.545",<br>                  "7": "16.0.0",<br>                  "13": "{\"ip\":{\"mode\":\"dhcp\"},\"ipv6\":{\"mode\":\"dhcp\"},\"proxy\":{\"mode\":\"none\"},\"status\":0,\"ts\":1617826406662}",<br>                  "8": "1.0.72",<br>                  "4": "1.1.78",<br>                  "1": "1.0.564",<br>                  "10": "0.906.52"<br>                },<br>                "information": [<br>                  {<br>                    "type": "VIDEO",<br>                    "pid": 2203,<br>                    "vid": 1133<br>                  }<br>                ],<br>                "updateState": "SYNC_UPDATE_STATE_CURRENT",<br>                "connectionState": "SYNC_CONNECTION_STATE_ONLINE"<br>              }<br>            ],<br>            "serialNumber": "2049FH1009F2",<br>            "connectionState": "SYNC_CONNECTION_STATE_ONLINE",<br>            "updateState": "SYNC_UPDATE_STATE_CURRENT",<br>            "scheduledUpdate": {},<br>            "rightSightConfiguration": {<br>              "enabled": true,<br>              "status": "OK",<br>              "lastModified": "1617826405729"<br>            },<br>            "videoSettingsConfiguration": {<br>              "lastModified": "1617907484943"<br>            },<br>            "bleConfiguration": {<br>              "bleMode": "BLE_ON",<br>              "lastModified": "1617902381720"<br>            }<br>          }<br>        ]<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received Product Details - {'uuid': 'usb|vid=46d|pid=86a|location=0x14442100', 'model': 'MEETUP', 'name': 'MeetUp', 'firmwarePackageVersion': '1.0.232', 'devices': [{'uuid': 'usb|vid=46d|pid=866|sn=B0B067EA', 'name': 'Logitech MeetUp', 'formFactor': 'MEETUP', 'information': [{'type': 'AUDIO', 'pid': 2151, 'firmwareVersion': '1.0.250', 'vid': 1133}, {'type': 'AUDIO_CODEC', 'pid': 2151, 'firmwareVersion': '8.0.94', 'vid': 1133}, {'type': 'AUDIO_BLE', 'pid': 2151, 'firmwareVersion': '1.0.121', 'vid': 1133}, {'type': 'VIDEO', 'pid': 2150, 'firmwareVersion': '1.0.232', 'vid': 1133}, {'type': 'EEPROM', 'pid': 2150, 'firmwareVersion': '1.15', 'vid': 1133}]}], 'connectionState': 'SYNC_CONNECTION_STATE_ONLINE', 'updateState': 'SYNC_UPDATE_STATE_AVAILABLE', 'scheduledUpdate': {}, 'rightSightConfiguration': {'enabled': True, 'status': 'OK', 'lastModified': '1617906845548'}}</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received attribute - uuid</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received attribute - model</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received attribute - name</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received attribute - devices</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received attribute - connectionState</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received attribute - updateState</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received attribute - scheduledUpdate</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received Product Details - {'uuid': 'usb|vid=46d|pid=88b|location=0x14442200', 'model': 'RALLY', 'name': 'Rally', 'firmwarePackageVersion': '1.1.103', 'devices': [{'uuid': 'usb|vid=46d|pid=885|sn=20180C2109861271', 'name': 'Rally Display Hub', 'formFactor': 'RALLY_TV_HUB', 'properties': {2: '44:73:d6:0e:d5:7c'}, 'information': [{'type': 'AUDIO', 'pid': 2181, 'firmwareVersion': '1.1.76', 'vid': 1133}, {'type': 'VALENS', 'pid': 2186, 'firmwareVersion': '7.4.47', 'vid': 1133}, {'type': 'AUDIO_BLE', 'pid': 2181, 'firmwareVersion': '2.0.158', 'vid': 1133}], 'updateState': 'SYNC_UPDATE_STATE_CURRENT', 'connectionState': 'SYNC_CONNECTION_STATE_ONLINE'}, {'uuid': '0xaabb', 'name': 'Rally Left Speaker', 'formFactor': 'RALLY_SPEAKER', 'properties': {1: '0'}, 'information': [{'type': 'SELF', 'vid': 1133}], 'connectionState': 'SYNC_CONNECTION_STATE_ONLINE'}, {'uuid': 'usb|vid=46d|pid=88f|location=0x14442220', 'name': 'Rally Table Hub', 'formFactor': 'RALLY_TABLE_HUB', 'isConnectedToHost': True, 'information': [{'type': 'SELF', 'pid': 2191, 'firmwareVersion': '1.1.253', 'vid': 1133}, {'type': 'VALENS', 'pid': 2191, 'firmwareVersion': '7.4.47', 'vid': 1133}], 'updateState': 'SYNC_UPDATE_STATE_CURRENT', 'connectionState': 'SYNC_CONNECTION_STATE_ONLINE'}, {'uuid': '0x0031', 'name': 'Rally Mic Pod Hub', 'formFactor': 'RALLY_MIC_POD_HUB', 'information': [{'type': 'SELF', 'firmwareVersion': '1.0.1032', 'vid': 1133}], 'updateState': 'SYNC_UPDATE_STATE_CURRENT', 'connectionState': 'SYNC_CONNECTION_STATE_ONLINE'}, {'uuid': '0x0021', 'name': 'Rally Mic Pod', 'formFactor': 'RALLY_MIC_POD', 'information': [{'type': 'SELF', 'firmwareVersion': '1.0.1048', 'vid': 1133}], 'updateState': 'SYNC_UPDATE_STATE_CURRENT', 'connectionState': 'SYNC_CONNECTION_STATE_ONLINE'}, {'uuid': '0x0022', 'name': 'Rally Mic Pod', 'formFactor': 'RALLY_MIC_POD', 'information': [{'type': 'SELF', 'firmwareVersion': '1.0.1048', 'vid': 1133}], 'updateState': 'SYNC_UPDATE_STATE_CURRENT', 'connectionState': 'SYNC_CONNECTION_STATE_ONLINE'}, {'uuid': 'usb|vid=46d|pid=881|sn=C0C5D553', 'name': 'Rally Camera', 'formFactor': 'RALLY_CAMERA', 'information': [{'type': 'VIDEO', 'pid': 2177, 'firmwareVersion': '1.1.183', 'vid': 1133}, {'type': 'EEPROM', 'firmwareVersion': '1.28', 'vid': 1133}, {'type': 'VIDEO_BLE', 'firmwareVersion': '2.106', 'vid': 1133}], 'updateState': 'SYNC_UPDATE_STATE_CURRENT', 'connectionState': 'SYNC_CONNECTION_STATE_ONLINE'}], 'serialNumber': '088f:20181221:4473d62395b0', 'connectionState': 'SYNC_CONNECTION_STATE_ONLINE', 'updateState': 'SYNC_UPDATE_STATE_AVAILABLE', 'scheduledUpdate': {}, 'rightSightConfiguration': {'status': 'OK'}}</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received attribute - uuid</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received attribute - model</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received attribute - name</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received attribute - devices</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received attribute - connectionState</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received attribute - updateState</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received attribute - scheduledUpdate</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received Product Details - {'uuid': 'usb|vid=46d|pid=8a4|location=0x244000', 'model': 'RALLY_BAR', 'name': 'Rally Bar', 'firmwarePackageVersion': '10.5.540', 'devices': [{'uuid': 'usb|vid=46d|pid=898|sn=2049FH1100G20000', 'name': 'Rally Bar', 'formFactor': 'AUDIO', 'information': [{'type': 'AUDIO', 'pid': 2200, 'firmwareVersion': '1.0.564', 'vid': 1133}], 'updateState': 'SYNC_UPDATE_STATE_CURRENT', 'connectionState': 'SYNC_CONNECTION_STATE_ONLINE'}, {'uuid': 'usb|vid=46d|pid=89b|sn=2049FH1009F2', 'name': 'Rally Bar', 'formFactor': 'VIDEO_CAMERA', 'properties': {6: '1.0.78', 12: '{"ip":{"mode":"dhcp"},"ipv6":{"mode":"dhcp"},"proxy":{"mode":"none"},"status":-1,"ts":1617826406665}', 9: '16.0.0', 5: '170.170.48059', 11: '1.2.545', 7: '16.0.0', 13: '{"ip":{"mode":"dhcp"},"ipv6":{"mode":"dhcp"},"proxy":{"mode":"none"},"status":0,"ts":1617826406662}', 8: '1.0.72', 4: '1.1.78', 1: '1.0.564', 10: '0.906.52'}, 'information': [{'type': 'VIDEO', 'pid': 2203, 'vid': 1133}], 'updateState': 'SYNC_UPDATE_STATE_CURRENT', 'connectionState': 'SYNC_CONNECTION_STATE_ONLINE'}], 'serialNumber': '2049FH1009F2', 'connectionState': 'SYNC_CONNECTION_STATE_ONLINE', 'updateState': 'SYNC_UPDATE_STATE_CURRENT', 'scheduledUpdate': {}, 'rightSightConfiguration': {'enabled': True, 'status': 'OK', 'lastModified': '1617826405729'}, 'videoSettingsConfiguration': {'lastModified': '1617907484943'}, 'bleConfiguration': {'bleMode': 'BLE_ON', 'lastModified': '1617902381720'}}</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received attribute - uuid</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received attribute - model</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received attribute - name</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received attribute - devices</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received attribute - connectionState</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received attribute - updateState</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:44 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received attribute - scheduledUpdate</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>test_002_getProductByIdRequest_MeetUp</span>
+						<span class='test-time'>Apr 8, 2021 11:44:45 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:44:45 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:44:46 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+58ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:44:45 AM</td>
+				<td class='step-details'>
+						Get product by ID attached to host via Sync App.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:44:46 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907486377.0,<br>    "guid": "280D87D6-E434-4A12-ADB0-538EA13EBB76"<br>  },<br>  "response": {<br>    "productResponse": {<br>      "getProductByIdResponse": {<br>        "product": {<br>          "uuid": "usb|vid=46d|pid=86a|location=0x14442100",<br>          "model": "MEETUP",<br>          "name": "MeetUp",<br>          "firmwarePackageVersion": "1.0.232",<br>          "devices": [<br>            {<br>              "uuid": "usb|vid=46d|pid=866|sn=B0B067EA",<br>              "name": "Logitech MeetUp",<br>              "formFactor": "MEETUP",<br>              "information": [<br>                {<br>                  "type": "AUDIO",<br>                  "pid": 2151,<br>                  "firmwareVersion": "1.0.250",<br>                  "vid": 1133<br>                },<br>                {<br>                  "type": "AUDIO_CODEC",<br>                  "pid": 2151,<br>                  "firmwareVersion": "8.0.94",<br>                  "vid": 1133<br>                },<br>                {<br>                  "type": "AUDIO_BLE",<br>                  "pid": 2151,<br>                  "firmwareVersion": "1.0.121",<br>                  "vid": 1133<br>                },<br>                {<br>                  "type": "VIDEO",<br>                  "pid": 2150,<br>                  "firmwareVersion": "1.0.232",<br>                  "vid": 1133<br>                },<br>                {<br>                  "type": "EEPROM",<br>                  "pid": 2150,<br>                  "firmwareVersion": "1.15",<br>                  "vid": 1133<br>                }<br>              ]<br>            }<br>          ],<br>          "connectionState": "SYNC_CONNECTION_STATE_ONLINE",<br>          "updateState": "SYNC_UPDATE_STATE_AVAILABLE",<br>          "scheduledUpdate": {},<br>          "rightSightConfiguration": {<br>            "enabled": true,<br>            "status": "OK",<br>            "lastModified": "1617906845548"<br>          }<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:46 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received MEETUP field</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:46 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received MeetUp field</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:46 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received [{'uuid': 'usb|vid=46d|pid=866|sn=B0B067EA', 'name': 'Logitech MeetUp', 'formFactor': 'MEETUP', 'information': [{'type': 'AUDIO', 'pid': 2151, 'firmwareVersion': '1.0.250', 'vid': 1133}, {'type': 'AUDIO_CODEC', 'pid': 2151, 'firmwareVersion': '8.0.94', 'vid': 1133}, {'type': 'AUDIO_BLE', 'pid': 2151, 'firmwareVersion': '1.0.121', 'vid': 1133}, {'type': 'VIDEO', 'pid': 2150, 'firmwareVersion': '1.0.232', 'vid': 1133}, {'type': 'EEPROM', 'pid': 2150, 'firmwareVersion': '1.15', 'vid': 1133}]}] field</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>test_101_getProductConfigurationRequest</span>
+						<span class='test-time'>Apr 8, 2021 11:44:46 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:44:46 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:44:50 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+912ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:44:46 AM</td>
+				<td class='step-details'>
+						Get Product Configuration request returns Get Product Configuration Response for Meetup.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:44:50 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907490365.0,<br>    "guid": "D9E2B52A-3F31-402C-83C7-01FC7948B905"<br>  },<br>  "response": {<br>    "productResponse": {<br>      "getProductConfigurationResponse": {<br>        "productUuid": "usb|vid=46d|pid=88b|location=0x14442200",<br>        "expectedDeviceCount": {<br>          "25": 1,<br>          "23": 2,<br>          "21": 1,<br>          "24": 1,<br>          "22": 1,<br>          "20": 1<br>        },<br>        "actualDeviceCount": {<br>          "21": 1,<br>          "25": 1,<br>          "23": 2,<br>          "20": 1,<br>          "24": 1,<br>          "22": 1<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:50 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received usb|vid=46d|pid=88b|location=0x14442200 field</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:50 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received {25: 1, 23: 2, 21: 1, 24: 1, 22: 1, 20: 1} field</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:50 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received {21: 1, 25: 1, 23: 2, 20: 1, 24: 1, 22: 1} field</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>test_102_setProductConfigurationRequest_fullConfig</span>
+						<span class='test-time'>Apr 8, 2021 11:44:50 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:44:50 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:44:52 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+987ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:44:50 AM</td>
+				<td class='step-details'>
+						Get Product Configuration request returns Get Product Configuration Response for Rally.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:44:52 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907492393.0,<br>    "guid": "83DED997-6488-46AE-83D5-E74FF3C19B21"<br>  },<br>  "response": {<br>    "productResponse": {<br>      "setProductConfigurationResponse": {<br>        "productUuid": "usb|vid=46d|pid=88b|location=0x14442200",<br>        "expectedDeviceCount": {<br>          "20": 4,<br>          "23": 2,<br>          "25": 0,<br>          "22": 1,<br>          "21": 1<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:52 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received usb|vid=46d|pid=88b|location=0x14442200 field</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>test_201_clearProductConfigurationRequest</span>
+						<span class='test-time'>Apr 8, 2021 11:44:52 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:44:52 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:44:54 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+569ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:44:52 AM</td>
+				<td class='step-details'>
+						Clear Product Configuration request returns Clear Product Configuration Response for Rally.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:44:54 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907494024.0,<br>    "guid": "30B74CA1-9DA4-4F7F-9A71-0B14232E5D5F"<br>  },<br>  "response": {<br>    "productResponse": {<br>      "clearProductConfigurationResponse": {<br>        "productUuid": "usb|vid=46d|pid=88b|location=0x14442200"<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:54 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received usb|vid=46d|pid=88b|location=0x14442200 field</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>test_202_forgetDeviceRequest_rally</span>
+						<span class='test-time'>Apr 8, 2021 11:44:54 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:44:54 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:44:55 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+62ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:44:54 AM</td>
+				<td class='step-details'>
+						Forget Device request returns Forget Device Response for Rally.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:44:55 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907495108.0,<br>    "guid": "378544D1-C8F8-46D0-B176-340D04D6D7C2"<br>  },<br>  "response": {<br>    "productResponse": {<br>      "forgetDeviceResponse": {<br>        "productUuid": "usb|vid=46d|pid=88b|location=0x14442200"<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:44:55 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received usb|vid=46d|pid=88b|location=0x14442200 field</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='7'>
+					<div class='test-heading'>
+						<span class='test-name'>test_203_forgetDeviceRequest_rallyComponents</span>
+						<span class='test-time'>Apr 8, 2021 11:44:55 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:44:55 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:45:05 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 9s+959ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:44:55 AM</td>
+				<td class='step-details'>
+						Forget Device request returns Forget Device Response for Rally.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:05 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907505124.0,<br>    "guid": "242EA9F7-6E78-45A7-A932-02F8C547DE8F"<br>  },<br>  "response": {<br>    "productResponse": {<br>      "forgetDeviceResponse": {<br>        "productUuid": "usb|vid=46d|pid=88b|location=0x14442200",<br>        "deviceUuids": [<br>          "usb|vid=46d|pid=885|sn=20180C2109861271",<br>          "0xaabb",<br>          "usb|vid=46d|pid=88f|location=0x14442220",<br>          "0x0031",<br>          "0x0021",<br>          "0x0022",<br>          "usb|vid=46d|pid=881|sn=C0C5D553"<br>        ]<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:05 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received usb|vid=46d|pid=88b|location=0x14442200 field</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='8'>
+					<div class='test-heading'>
+						<span class='test-name'>test_204_Product_State_Changed_Event_rally</span>
+						<span class='test-time'>Apr 8, 2021 11:45:05 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:45:05 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:45:08 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+78ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:05 AM</td>
+				<td class='step-details'>
+						Product State Changed Event
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:08 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received usb|vid=46d|pid=88b|location=0x14442200 field</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:08 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{'productUuid': 'usb|vid=46d|pid=88b|location=0x14442200', 'connectionState': 'SYNC_CONNECTION_STATE_FORGOTTEN'} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:08 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received usb|vid=46d|pid=88b|location=0x14442200 field</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:08 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received SYNC_CONNECTION_STATE_FORGOTTEN field</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>test_301_productUnavailableEvent</span>
+						<span class='test-time'>Apr 8, 2021 11:45:08 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:45:08 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:45:11 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+308ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:11 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{'productUuid': 'usb|vid=46d|pid=86a|location=0x14442100'} </p></details>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='10'>
+					<div class='test-heading'>
+						<span class='test-name'>test_302_ProductAvailableEvent</span>
+						<span class='test-time'>Apr 8, 2021 11:45:11 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:45:11 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:45:19 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 7s+770ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:19 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{'product': {'uuid': 'usb|vid=46d|pid=86a|location=0x14442100', 'model': 'MEETUP', 'name': 'MeetUp', 'firmwarePackageVersion': '1.0.232', 'devices': [{'uuid': 'usb|vid=46d|pid=866|sn=B0B067EA', 'name': 'Logitech MeetUp', 'formFactor': 'MEETUP', 'information': [{'type': 'AUDIO', 'pid': 2151, 'firmwareVersion': '1.0.250', 'vid': 1133}, {'type': 'AUDIO_CODEC', 'pid': 2151, 'firmwareVersion': '8.0.94', 'vid': 1133}, {'type': 'AUDIO_BLE', 'pid': 2151, 'firmwareVersion': '1.0.121', 'vid': 1133}, {'type': 'VIDEO', 'pid': 2150, 'firmwareVersion': '1.0.232', 'vid': 1133}, {'type': 'EEPROM', 'pid': 2150, 'firmwareVersion': '1.15', 'vid': 1133}]}], 'connectionState': 'SYNC_CONNECTION_STATE_ONLINE', 'updateState': 'SYNC_UPDATE_STATE_AVAILABLE', 'scheduledUpdate': {}, 'rightSightConfiguration': {'enabled': True, 'status': 'OK', 'lastModified': '1617906845548'}}} </p></details>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>test_001_getRoomInformationRequest</span>
+						<span class='test-time'>Apr 8, 2021 11:45:20 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:45:20 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:45:21 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+44ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:20 AM</td>
+				<td class='step-details'>
+						Message: GetRoomInformationRequest
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:21 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907521546.0,<br>    "guid": "E17F1B88-2E80-483F-B1AE-7C5F0C03EF5E"<br>  },<br>  "response": {<br>    "roomResponse": {<br>      "getRoomInformationResponse": {<br>        "roomInformation": {<br>          "lastModified": "1617902903065",<br>          "roomName": "Test-Room",<br>          "maxOccupancy": 3,<br>          "roomOccupancyMode": "ROOM_OCCUPANCY_MODE_MEETINGS_ONLY"<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:21 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received roomInformation field - {'lastModified': '1617902903065', 'roomName': 'Test-Room', 'maxOccupancy': 3, 'roomOccupancyMode': 'ROOM_OCCUPANCY_MODE_MEETINGS_ONLY'}</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:21 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received lastModified field - 1617902903065</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:21 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received roomName field - Test-Room</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:21 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received maxOccupancy field - 3</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='12'>
+					<div class='test-heading'>
+						<span class='test-name'>test_002_setRoomNameRequest</span>
+						<span class='test-time'>Apr 8, 2021 11:45:21 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:45:21 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:45:22 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+42ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:21 AM</td>
+				<td class='step-details'>
+						Message: SetRoomNameRequest
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:22 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907522612.0,<br>    "guid": "E9A672AA-7BE8-4860-AC97-9C367B39C5EF"<br>  },<br>  "response": {<br>    "roomResponse": {<br>      "setRoomNameResponse": {<br>        "roomInformation": {<br>          "lastModified": "1617902903065",<br>          "roomName": "Test-Room",<br>          "maxOccupancy": 3,<br>          "roomOccupancyMode": "ROOM_OCCUPANCY_MODE_MEETINGS_ONLY"<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:22 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received roomInformation field - {'lastModified': '1617902903065', 'roomName': 'Test-Room', 'maxOccupancy': 3, 'roomOccupancyMode': 'ROOM_OCCUPANCY_MODE_MEETINGS_ONLY'}</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:22 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received lastModified field - 1617902903065</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:22 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received roomName field - Test-Room</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:22 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received maxOccupancy field - 3</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='13'>
+					<div class='test-heading'>
+						<span class='test-name'>test_003_setRoomMaxOccupancyRequest</span>
+						<span class='test-time'>Apr 8, 2021 11:45:22 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:45:22 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:45:23 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+44ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:22 AM</td>
+				<td class='step-details'>
+						Message: SetRoomMaxOccupancyRequest
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:23 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907523676.0,<br>    "guid": "B5471693-05B4-4C7F-8701-14E5A71A2EB9"<br>  },<br>  "response": {<br>    "roomResponse": {<br>      "setRoomMaxOccupancyResponse": {<br>        "roomInformation": {<br>          "lastModified": "1617907523674",<br>          "roomName": "Test-Room",<br>          "maxOccupancy": 4,<br>          "roomOccupancyMode": "ROOM_OCCUPANCY_MODE_MEETINGS_ONLY"<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:23 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received roomInformation field - {'lastModified': '1617907523674', 'roomName': 'Test-Room', 'maxOccupancy': 4, 'roomOccupancyMode': 'ROOM_OCCUPANCY_MODE_MEETINGS_ONLY'}</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:23 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received lastModified field - 1617907523674</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:23 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received roomName field - Test-Room</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:23 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received maxOccupancy field - 4</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='14'>
+					<div class='test-heading'>
+						<span class='test-name'>test_004_roomInformationChangedEvent</span>
+						<span class='test-time'>Apr 8, 2021 11:45:23 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:45:23 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:45:29 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 6s+101ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:23 AM</td>
+				<td class='step-details'>
+						Message: RoomInformationChangedEvent
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:29 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{'header': {'timestamp': 1617907527813.0, 'guid': '173C8BDC-41B7-4D7A-82EB-8ED509CBED0C'}, 'event': {'roomEvent': {'roomInformationChangedEvent': {'roomInformation': {'lastModified': '1617907527810', 'roomName': 'Test-Room', 'maxOccupancy': 6, 'roomOccupancyMode': 'ROOM_OCCUPANCY_MODE_MEETINGS_ONLY'}}}}} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:29 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received roomInformation field - {'lastModified': '1617907527810', 'roomName': 'Test-Room', 'maxOccupancy': 6, 'roomOccupancyMode': 'ROOM_OCCUPANCY_MODE_MEETINGS_ONLY'}</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:29 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received lastModified field - 1617907527810</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:29 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received roomName field - Test-Room</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:29 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received maxOccupancy field - 6</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='15'>
+					<div class='test-heading'>
+						<span class='test-name'>test_005_setRoomOccupancyModeRequest</span>
+						<span class='test-time'>Apr 8, 2021 11:45:29 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:45:29 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:45:32 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+140ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:29 AM</td>
+				<td class='step-details'>
+						Message: SetRoomOccupancyModeRequest
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:30 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907530882.0,<br>    "guid": "66A18ABE-9968-4E92-A8CB-A78587926167"<br>  },<br>  "response": {<br>    "roomResponse": {<br>      "setRoomOccupancyModeResponse": {<br>        "roomInformation": {<br>          "lastModified": "1617907530879",<br>          "roomName": "Test-Room",<br>          "maxOccupancy": 6<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:30 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received roomInformation field - {'lastModified': '1617907530879', 'roomName': 'Test-Room', 'maxOccupancy': 6}</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:30 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received lastModified field - 1617907530879</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:30 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received roomName field - Test-Room</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:30 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received maxOccupancy field - 6</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:31 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907531926.0,<br>    "guid": "A03BB8AA-A26B-426C-9996-7A7704531161"<br>  },<br>  "response": {<br>    "roomResponse": {<br>      "setRoomOccupancyModeResponse": {<br>        "roomInformation": {<br>          "lastModified": "1617907531923",<br>          "roomName": "Test-Room",<br>          "maxOccupancy": 6,<br>          "roomOccupancyMode": "ROOM_OCCUPANCY_MODE_ALWAYS_ON"<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:31 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received roomInformation field - {'lastModified': '1617907531923', 'roomName': 'Test-Room', 'maxOccupancy': 6, 'roomOccupancyMode': 'ROOM_OCCUPANCY_MODE_ALWAYS_ON'}</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:31 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received lastModified field - 1617907531923</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:31 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received roomName field - Test-Room</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:31 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received maxOccupancy field - 6</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:32 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received roomInformation field - {'lastModified': '1617907532972', 'roomName': 'Test-Room', 'maxOccupancy': 6, 'roomOccupancyMode': 'ROOM_OCCUPANCY_MODE_MEETINGS_ONLY'}</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:32 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received lastModified field - 1617907532972</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:32 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received roomName field - Test-Room</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:32 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received maxOccupancy field - 6</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='16'>
+					<div class='test-heading'>
+						<span class='test-name'>test_006_bulkSetRoomInformationRequest</span>
+						<span class='test-time'>Apr 8, 2021 11:45:33 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:45:33 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:45:34 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+42ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:33 AM</td>
+				<td class='step-details'>
+						Message: BulkSetRoomInformationRequest
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:34 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907534041.0,<br>    "guid": "E2202775-630F-4986-9DD0-3B67DC55D616"<br>  },<br>  "response": {<br>    "roomResponse": {<br>      "bulkSetRoomInformationResponse": {<br>        "roomInformation": {<br>          "lastModified": "1617907534039",<br>          "roomName": "Test-Room-Name-Updated",<br>          "maxOccupancy": 10,<br>          "roomOccupancyMode": "ROOM_OCCUPANCY_MODE_MEETINGS_ONLY"<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:34 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received roomInformation field - {'lastModified': '1617907534039', 'roomName': 'Test-Room-Name-Updated', 'maxOccupancy': 10, 'roomOccupancyMode': 'ROOM_OCCUPANCY_MODE_MEETINGS_ONLY'}</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:34 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received lastModified field - 1617907534039</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:34 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received roomName field - Test-Room-Name-Updated</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:34 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received maxOccupancy field - 10</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='17'>
+					<div class='test-heading'>
+						<span class='test-name'>test_007_bulkSetRoomInformationRequest_empty_room_info</span>
+						<span class='test-time'>Apr 8, 2021 11:45:34 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:45:34 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:45:36 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+97ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:34 AM</td>
+				<td class='step-details'>
+						Message: BulkSetRoomInformationRequest: Empty room_information map
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:36 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907536148.0,<br>    "guid": "5FB429A6-9FCA-4D8D-8022-794E8D1F7614"<br>  },<br>  "response": {<br>    "roomResponse": {<br>      "bulkSetRoomInformationResponse": {<br>        "roomInformation": {<br>          "lastModified": "1617907534817",<br>          "roomName": "Test-Room-Name-Updated",<br>          "maxOccupancy": 10,<br>          "roomOccupancyMode": "ROOM_OCCUPANCY_MODE_MEETINGS_ONLY"<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:36 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received roomInformation field - {'lastModified': '1617907534817', 'roomName': 'Test-Room-Name-Updated', 'maxOccupancy': 10, 'roomOccupancyMode': 'ROOM_OCCUPANCY_MODE_MEETINGS_ONLY'}</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:36 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received lastModified field - 1617907534817</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:36 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received roomName field - Test-Room-Name-Updated</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:36 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received maxOccupancy field - 10</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:36 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received roomOccupancyMode field - ROOM_OCCUPANCY_MODE_MEETINGS_ONLY</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='18'>
+					<div class='test-heading'>
+						<span class='test-name'>test_008_bulkSetRoomInformationRequest_partial_room_info</span>
+						<span class='test-time'>Apr 8, 2021 11:45:36 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:45:36 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:45:38 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+91ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:36 AM</td>
+				<td class='step-details'>
+						Message: BulkSetRoomInformationRequest: Partial room_information map
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:38 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907538263.0,<br>    "guid": "85CD94B0-8F41-4F3B-95B5-53157B072D85"<br>  },<br>  "response": {<br>    "roomResponse": {<br>      "bulkSetRoomInformationResponse": {<br>        "roomInformation": {<br>          "lastModified": "1617907538262",<br>          "roomName": "Test-Name-Updated",<br>          "maxOccupancy": 12,<br>          "roomOccupancyMode": "ROOM_OCCUPANCY_MODE_MEETINGS_ONLY"<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:38 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received roomInformation field - {'lastModified': '1617907538262', 'roomName': 'Test-Name-Updated', 'maxOccupancy': 12, 'roomOccupancyMode': 'ROOM_OCCUPANCY_MODE_MEETINGS_ONLY'}</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:38 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received lastModified field - 1617907538262</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='19'>
+					<div class='test-heading'>
+						<span class='test-name'>test_001_getLogiSyncConfigurationRequest</span>
+						<span class='test-time'>Apr 8, 2021 11:45:40 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:45:40 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:45:41 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+49ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:41 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907541463.0,<br>    "guid": "0A0E17FF-7E47-411B-B564-54D7FFAE603E"<br>  },<br>  "response": {<br>    "configurationResponse": {<br>      "getLogiSyncConfigurationResponse": {<br>        "configuration": {<br>          "configuration": {<br>            "3": "",<br>            "2": "Test-Room",<br>            "4": "logi-test-mt",<br>            "1": ""<br>          }<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:41 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received COLLECTING ANALYTICS field - </b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:41 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received ROOM_NAME field - Test-Room</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:41 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received EULA_ACCEPTED field - </b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:41 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received ORGANIZATION_NAME field - logi-test-mt</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='20'>
+					<div class='test-heading'>
+						<span class='test-name'>test_002_setLogiSyncConfigurationRequest_fullConfig</span>
+						<span class='test-time'>Apr 8, 2021 11:45:41 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:45:41 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:45:42 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+46ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:42 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907542535.0,<br>    "guid": "5578685F-0183-40D3-913C-E644503C8540"<br>  },<br>  "response": {<br>    "configurationResponse": {<br>      "setLogiSyncConfigurationResponse": {<br>        "configuration": {<br>          "configuration": {<br>            "3": "false",<br>            "2": "TestName",<br>            "4": "TestOrgName",<br>            "1": "true"<br>          }<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:42 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received COLLECTING_ANALYTICS field</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:42 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received ROOM_NAME field</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:42 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received EULA_ACCEPTED field</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:42 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received ORGANIZATION_NAME field</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='21'>
+					<div class='test-heading'>
+						<span class='test-name'>test_003_logiSyncConfigurationChangedEvent</span>
+						<span class='test-time'>Apr 8, 2021 11:45:42 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:45:42 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:45:48 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 6s+95ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:48 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{'header': {'timestamp': 1617907543811.0, 'guid': '6FAC89CB-D633-4F6C-BB0A-83A026D2CA4B'}, 'event': {'configurationEvent': {'logiSyncConfigurationChangedEvent': {'configuration': {'configuration': {3: 'false', 4: 'TestOrgName', 1: 'true', 2: 'TestName'}}}}}} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:48 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received configuration field - {'configuration': {3: 'false', 4: 'TestOrgName', 1: 'true', 2: 'TestName'}}</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='22'>
+					<div class='test-heading'>
+						<span class='test-name'>test_004_setLogiSyncConfigurationRequest_emptyConfig</span>
+						<span class='test-time'>Apr 8, 2021 11:45:48 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:45:48 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:45:49 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+44ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:49 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907549718.0,<br>    "guid": "E3DA9F6D-B37D-4F11-AC47-DDA6B4756CC6"<br>  },<br>  "response": {<br>    "configurationResponse": {<br>      "setLogiSyncConfigurationResponse": {<br>        "configuration": {}<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='23'>
+					<div class='test-heading'>
+						<span class='test-name'>test_005_setLogiSyncConfigurationRequest_partialConfig</span>
+						<span class='test-time'>Apr 8, 2021 11:45:49 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:45:49 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:45:50 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+44ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:50 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907550779.0,<br>    "guid": "A872789A-97FA-40EB-9096-DD13DE697468"<br>  },<br>  "response": {<br>    "configurationResponse": {<br>      "setLogiSyncConfigurationResponse": {<br>        "configuration": {<br>          "configuration": {<br>            "3": "true"<br>          }<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:50 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received EULA_ACCEPTED field</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='24'>
+					<div class='test-heading'>
+						<span class='test-name'>test_100_getHostInformationRequest</span>
+						<span class='test-time'>Apr 8, 2021 11:45:50 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:45:50 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:45:52 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+401ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:52 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907552190.0,<br>    "guid": "D786B3C6-B765-4088-97E3-9E0DAD7A0C12"<br>  },<br>  "response": {<br>    "configurationResponse": {<br>      "getHostInformationResponse": {<br>        "information": {<br>          "hardwareModel": "Apple Mac mini",<br>          "operatingSystemName": "macOS\n",<br>          "operatingSystemVersion": "Version 10.16 (Build 20D91)",<br>          "processor": "Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz",<br>          "memory": "16 GB",<br>          "displays": [<br>            {<br>              "resolution": "2560 x 1440"<br>            }<br>          ],<br>          "hostName": "sqalogitech\u2019s Mac mini",<br>          "roomName": "sqalogitech\u2019s Mac mini",<br>          "syncVersion": "2.3.433",<br>          "syncProxyVersion": "2.3.82",<br>          "syncMiddlewareVersion": "2.3.273",<br>          "syncHandlerVersion": "2.3.23"<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:52 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received hardwareModel field - Apple Mac mini</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:52 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received operatingSystemName field - macOS
+</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:52 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received operatingSystemVersion field - Version 10.16 (Build 20D91)</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:52 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received processor field - Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:52 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received memory field - 16 GB</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:52 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received hostName field - sqalogitech’s Mac mini</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:52 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received roomName field - sqalogitech’s Mac mini</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:52 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received operatingSystemName field - macOS
+</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:52 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received syncVersion field - 2.3.433</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:52 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received syncMiddlewareVersion field - 2.3.273</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:52 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received syncHandlerVersion field - 2.3.23</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:52 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received length of connected displays - 1</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='25'>
+					<div class='test-heading'>
+						<span class='test-name'>test_001_getLatestFirmwareByProductIdRequest</span>
+						<span class='test-time'>Apr 8, 2021 11:45:53 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:45:53 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:45:54 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+508ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:53 AM</td>
+				<td class='step-details'>
+						Get all products attached to host via Sync App.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:54 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907554875.0,<br>    "guid": "28306F7C-0E06-4455-948E-60803811D796"<br>  },<br>  "response": {<br>    "firmwareResponse": {<br>      "getLatestFirmwareByProductIdResponse": {<br>        "productUuid": "usb|vid=46d|pid=88b|location=0x14442200",<br>        "latestFirmwarePackageVersion": "1.1.106\r",<br>        "latestFirmwarePublishedDate": 1602704383,<br>        "latestDeviceFirmwareVersions": [<br>          {<br>            "deviceFormFactor": "RALLY_CAMERA",<br>            "type": "VIDEO",<br>            "latestFirmwareVersion": "1.1.183\r"<br>          },<br>          {<br>            "deviceFormFactor": "RALLY_CAMERA",<br>            "type": "VIDEO_BLE",<br>            "latestFirmwareVersion": "2.106"<br>          },<br>          {<br>            "deviceFormFactor": "RALLY_TV_HUB",<br>            "type": "AUDIO",<br>            "latestFirmwareVersion": "1.1.76\r"<br>          },<br>          {<br>            "deviceFormFactor": "RALLY_TV_HUB",<br>            "type": "AUDIO_BLE",<br>            "latestFirmwareVersion": "2.0.158\r"<br>          },<br>          {<br>            "deviceFormFactor": "RALLY_TABLE_HUB",<br>            "type": "SELF",<br>            "latestFirmwareVersion": "1.1.256\r"<br>          },<br>          {<br>            "deviceFormFactor": "RALLY_MIC_POD",<br>            "type": "SELF",<br>            "latestFirmwareVersion": "1.0.1048\r"<br>          },<br>          {<br>            "deviceFormFactor": "RALLY_MIC_POD_HUB",<br>            "type": "SELF",<br>            "latestFirmwareVersion": "1.0.1032\r"<br>          }<br>        ]<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:54 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received productUuid field - usb|vid=46d|pid=88b|location=0x14442200</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:54 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received latestFirmwarePackageVersion field - 1.1.106</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:54 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received latestFirmwarePublishedDate field - 1602704383</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='26'>
+					<div class='test-heading'>
+						<span class='test-name'>test_001_setRightSightConfigurationResponse_on_call_start</span>
+						<span class='test-time'>Apr 8, 2021 11:45:54 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:45:54 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:45:56 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+48ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:54 AM</td>
+				<td class='step-details'>
+						SetRightSightConfigurationRequest - MeetUp - Change the mode to On Call Start. Data Structure: RightSightConfiguration.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:56 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907556004.0,<br>    "guid": "2065E3FF-3945-44B6-90B5-58B8876BE276"<br>  },<br>  "response": {<br>    "videoSettingsResponse": {<br>      "setRightSightConfigurationResponse": {<br>        "productUuid": "usb|vid=46d|pid=86a|location=0x14442100",<br>        "productModel": "MEETUP",<br>        "rightSightConfiguration": {<br>          "enabled": true,<br>          "mode": "ON_CALL_START",<br>          "status": "OK",<br>          "lastModified": "1617907556002"<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:56 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received productUuid field - usb|vid=46d|pid=86a|location=0x14442100</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:56 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received productModel field - MEETUP</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:56 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received rightSightConfiguration field - {'enabled': True, 'mode': 'ON_CALL_START', 'status': 'OK', 'lastModified': '1617907556002'}</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:56 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">RightSight Configuration ON_CALL_START Mode field correct</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:56 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">RightSight Configuration ON_CALL_START Enabled field True</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:56 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">RightSight Configuration ON_CALL_START Status field OK</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='27'>
+					<div class='test-heading'>
+						<span class='test-name'>test_002_setRightSightConfigurationResponse_off</span>
+						<span class='test-time'>Apr 8, 2021 11:45:56 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:45:56 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:45:57 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+45ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:56 AM</td>
+				<td class='step-details'>
+						SetRightSightConfigurationRequest - MeetUp - Turn off RightSight. Data Structure: RightSightConfiguration.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:57 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907557067.0,<br>    "guid": "612E4092-944E-4E09-BB73-63091336B506"<br>  },<br>  "response": {<br>    "videoSettingsResponse": {<br>      "setRightSightConfigurationResponse": {<br>        "productUuid": "usb|vid=46d|pid=86a|location=0x14442100",<br>        "productModel": "MEETUP",<br>        "rightSightConfiguration": {<br>          "status": "OK",<br>          "lastModified": "1617907557065"<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:57 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received productUuid field - usb|vid=46d|pid=86a|location=0x14442100</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:57 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received productModel field - MEETUP</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:57 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received rightSightConfiguration field - {'status': 'OK', 'lastModified': '1617907557065'}</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:57 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">RightSight Configuration mode field not present</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:57 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">RightSight Configuration enabled field not present</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:57 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">RightSight Configuration Status field OK</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='28'>
+					<div class='test-heading'>
+						<span class='test-name'>test_003_setRightSightConfigurationResponse_dynamic</span>
+						<span class='test-time'>Apr 8, 2021 11:45:57 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:45:57 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:45:58 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+49ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:57 AM</td>
+				<td class='step-details'>
+						SetRightSightConfigurationRequest - MeetUp - Change the mode to Dynamic. Data Structure: RightSightConfiguration.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:58 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907558136.0,<br>    "guid": "F104A17A-B295-4DBC-9086-56E3AE1B8414"<br>  },<br>  "response": {<br>    "videoSettingsResponse": {<br>      "setRightSightConfigurationResponse": {<br>        "productUuid": "usb|vid=46d|pid=86a|location=0x14442100",<br>        "productModel": "MEETUP",<br>        "rightSightConfiguration": {<br>          "enabled": true,<br>          "status": "OK",<br>          "lastModified": "1617907558134"<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:58 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received productUuid field - usb|vid=46d|pid=86a|location=0x14442100</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:58 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received productModel field - MEETUP</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:58 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received rightSightConfiguration field - {'enabled': True, 'status': 'OK', 'lastModified': '1617907558134'}</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:58 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">RightSight Configuration DYNAMIC Enabled field True</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:45:58 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">RightSight Configuration DYNAMIC Status field OK</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='29'>
+					<div class='test-heading'>
+						<span class='test-name'>test_004_RightSightConfigurationChangedEvent_on_call_start_to_dynamic</span>
+						<span class='test-time'>Apr 8, 2021 11:45:58 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:45:58 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:46:04 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 6s+105ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:45:58 AM</td>
+				<td class='step-details'>
+						RightSightConfigurationChangedEvent - Change the mode from on call start to dynamic. Data Structure: RightSightConfiguration.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:46:04 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{'header': {'timestamp': 1617907562256.0, 'guid': '6CE25E5C-156F-4374-B89B-90080F8F244C'}, 'event': {'videoSettingsEvent': {'rightSightConfigurationChangedEvent': {'productUuid': 'usb|vid=46d|pid=86a|location=0x14442100', 'productModel': 'MEETUP', 'rightSightConfiguration': {'enabled': True, 'status': 'OK', 'lastModified': '1617907562254'}}}}} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:04 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Event Response - Received productUuid field</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:04 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Event Response - Received productModel field </b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:04 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Event Response - Received rightSightConfiguration field</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='30'>
+					<div class='test-heading'>
+						<span class='test-name'>test_101_setAntiFlickerConfigurationRequest_to_NTSC</span>
+						<span class='test-time'>Apr 8, 2021 11:46:04 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:46:04 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:46:05 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+46ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:46:04 AM</td>
+				<td class='step-details'>
+						SetAntiFlickerConfigurationRequest : Set Anti Flicker Configuration to NTSC 60 Hz.Data Structure: VideoSettingsConfiguration.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:46:05 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907565321.0,<br>    "guid": "434B96F1-769B-4B89-B6A1-A3121A1663AC"<br>  },<br>  "response": {<br>    "videoSettingsResponse": {<br>      "setAntiFlickerConfigurationResponse": {<br>        "productUuid": "usb|vid=46d|pid=8a4|location=0x244000",<br>        "productModel": "RALLY_BAR",<br>        "videoSettingsConfiguration": {<br>          "lastModified": "1617907565319"<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:05 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received productUuid field - usb|vid=46d|pid=8a4|location=0x244000</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:05 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received productModel field - RALLY_BAR</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:05 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received videoSettingsConfiguration field - {'lastModified': '1617907565319'}</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:05 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">errors field not present</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='31'>
+					<div class='test-heading'>
+						<span class='test-name'>test_102_setAntiFlickerConfigurationRequest_to_PAL</span>
+						<span class='test-time'>Apr 8, 2021 11:46:05 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:46:05 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:46:06 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+42ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:46:05 AM</td>
+				<td class='step-details'>
+						SetAntiFlickerConfigurationRequest: Set Anti Flicker Configuration to PAL 50 Hz.Data Structure: VideoSettingsConfiguration.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:46:06 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907566382.0,<br>    "guid": "E47A0A74-F757-4B04-8495-8D22E7DDCEF3"<br>  },<br>  "response": {<br>    "videoSettingsResponse": {<br>      "setAntiFlickerConfigurationResponse": {<br>        "productUuid": "usb|vid=46d|pid=8a4|location=0x244000",<br>        "productModel": "RALLY_BAR",<br>        "videoSettingsConfiguration": {<br>          "antiFlickerMode": "PAL_50HZ",<br>          "lastModified": "1617907566380"<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:06 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received productUuid field - usb|vid=46d|pid=8a4|location=0x244000</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:06 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received productModel field - RALLY_BAR</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:06 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received videoSettingsConfiguration field - {'antiFlickerMode': 'PAL_50HZ', 'lastModified': '1617907566380'}</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:06 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">errors field not present</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:06 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Anti-Flicker Mode is PAL</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='32'>
+					<div class='test-heading'>
+						<span class='test-name'>test_103_videoSettingsConfigurationChangedEvent_PAL_to_NTSC</span>
+						<span class='test-time'>Apr 8, 2021 11:46:06 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:46:06 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:46:12 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 6s+103ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:46:06 AM</td>
+				<td class='step-details'>
+						VideoSettingsConfigurationChangedEvent: PAL to NTSC.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:46:12 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{'header': {'timestamp': 1617907570499.0, 'guid': 'D11E209C-703E-404C-B9AD-32837A6482A5'}, 'event': {'videoSettingsEvent': {'videoSettingsConfigurationChangedEvent': {'productUuid': 'usb|vid=46d|pid=8a4|location=0x244000', 'productModel': 'RALLY_BAR', 'videoSettingConfiguration': {'lastModified': '1617907570496'}}}}} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:12 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Event Response - Received productUuid field</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:12 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Event Response - Received productModel field </b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:12 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Event Response - Received videoSettingsConfiguration field</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='33'>
+					<div class='test-heading'>
+						<span class='test-name'>test_001_setBleConfigurationRequest_off</span>
+						<span class='test-time'>Apr 8, 2021 11:46:12 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:46:12 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:46:13 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+66ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:46:12 AM</td>
+				<td class='step-details'>
+						Set BLE configuration for Rally Bar to OFF.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:46:13 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907573652.0,<br>    "guid": "8695EC3B-56BC-448C-B47D-723A0AAF8786"<br>  },<br>  "response": {<br>    "bleSettingsResponse": {<br>      "setBleConfigurationResponse": {<br>        "productUuid": "usb|vid=46d|pid=8a4|location=0x244000",<br>        "productModel": "RALLY_BAR",<br>        "bleConfiguration": {<br>          "lastModified": "1617907573651"<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:13 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received productUuid field - usb|vid=46d|pid=8a4|location=0x244000</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:13 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received productModel field - RALLY_BAR</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:13 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received bleConfiguration field - {'lastModified': '1617907573651'}</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:13 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Bluetooth Mode present in Bluetooth Configuration</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:13 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Last Modified present in Bluetooth Configuration</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='34'>
+					<div class='test-heading'>
+						<span class='test-name'>test_002_setBleConfigurationRequest_offRedundant</span>
+						<span class='test-time'>Apr 8, 2021 11:46:13 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:46:13 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:46:20 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 7s+239ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:46:13 AM</td>
+				<td class='step-details'>
+						Set BLE configuration for Rally Bar to OFF.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:46:20 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907580905.0,<br>    "guid": "E790B31A-5A58-47A3-9CCC-80A62E9A8987"<br>  },<br>  "response": {<br>    "bleSettingsResponse": {<br>      "setBleConfigurationResponse": {<br>        "errors": [<br>          {<br>            "errorCode": 10077,<br>            "errorMessage": "Request timeout"<br>          }<br>        ],<br>        "productUuid": "usb|vid=46d|pid=8a4|location=0x244000",<br>        "productModel": "RALLY_BAR",<br>        "bleConfiguration": {<br>          "errorCode": "10077=0x275d Request timeout",<br>          "errorCodeTs": "1617907580904"<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:20 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received productUuid field - usb|vid=46d|pid=8a4|location=0x244000</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:20 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received productModel field - RALLY_BAR</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:20 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received bleConfiguration field - {'errorCode': '10077=0x275d Request timeout', 'errorCodeTs': '1617907580904'}</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:20 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Timeout in Bluetooth Configuration as expected</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='35'>
+					<div class='test-heading'>
+						<span class='test-name'>test_003_setBleConfigurationRequest_on</span>
+						<span class='test-time'>Apr 8, 2021 11:46:20 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:46:20 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:46:23 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+610ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:46:20 AM</td>
+				<td class='step-details'>
+						Set BLE configuration for Rally Bar to ON.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:46:23 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907583525.0,<br>    "guid": "625C3734-2470-46AE-96CC-A76CFB918BC0"<br>  },<br>  "response": {<br>    "bleSettingsResponse": {<br>      "setBleConfigurationResponse": {<br>        "productUuid": "usb|vid=46d|pid=8a4|location=0x244000",<br>        "productModel": "RALLY_BAR",<br>        "bleConfiguration": {<br>          "bleMode": "BLE_ON",<br>          "lastModified": "1617907583523"<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:23 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received productUuid field - usb|vid=46d|pid=8a4|location=0x244000</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:23 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received productModel field - RALLY_BAR</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:23 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received bleConfiguration field - {'bleMode': 'BLE_ON', 'lastModified': '1617907583523'}</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:23 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Bluetooth Mode present in Bluetooth Configuration</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:23 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Bluetooth Mode set to ON in Bluetooth Configuration</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='36'>
+					<div class='test-heading'>
+						<span class='test-name'>test_004_setBleConfigurationRequest_onRedundant</span>
+						<span class='test-time'>Apr 8, 2021 11:46:23 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 8, 2021 11:46:23 AM</span>
+	<span class='label end-time'>Apr 8, 2021 11:46:30 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 7s+231ms</span>
+</div>
+<div class='test-desc'>Test Case Details </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:46:23 AM</td>
+				<td class='step-details'>
+						Set BLE configuration for Rally Bar to ON.
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:46:30 AM</td>
+				<td class='step-details'>
+						<details><summary>API Response</summary><p>{<br>  "header": {<br>    "timestamp": 1617907590800.0,<br>    "guid": "467DE970-BA0B-4A1D-B0BC-6BDA290F73A0"<br>  },<br>  "response": {<br>    "bleSettingsResponse": {<br>      "setBleConfigurationResponse": {<br>        "errors": [<br>          {<br>            "errorCode": 10077,<br>            "errorMessage": "Request timeout"<br>          }<br>        ],<br>        "productUuid": "usb|vid=46d|pid=8a4|location=0x244000",<br>        "productModel": "RALLY_BAR",<br>        "bleConfiguration": {<br>          "bleMode": "BLE_ON",<br>          "errorCode": "10077=0x275d Request timeout",<br>          "errorCodeTs": "1617907590799"<br>        }<br>      }<br>    }<br>  }<br>} </p></details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:30 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received productUuid field - usb|vid=46d|pid=8a4|location=0x244000</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:30 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received productModel field - RALLY_BAR</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:30 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Received bleConfiguration field - {'bleMode': 'BLE_ON', 'errorCode': '10077=0x275d Request timeout', 'errorCodeTs': '1617907590799'}</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:46:30 AM</td>
+				<td class='step-details'>
+						<b style="color:Green">Timeout in Bluetooth Configuration as expected</b>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+</div>
+<!-- test view --><!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>36</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>0</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Apr 8, 2021 11:44:41 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Apr 8, 2021 11:46:30 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 1m 49s+618ms</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->		</div>
+		<!-- container -->
+		<script>
+			var statusGroup = {
+                parentCount: 36,
+				passParent: 36,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				childCount: 0,
+				passChild: 0,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				debugChild: 0,
+				exceptionsChild: 0,
+				grandChildCount: 0,
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				debugGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		<script>
+			var timeline = {
+			        "test_001_getAllProductsRequest":3.514,"test_002_getProductByIdRequest_MeetUp":1.058,"test_101_getProductConfigurationRequest":3.912,"test_102_setProductConfigurationRequest_fullConfig":1.987,"test_201_clearProductConfigurationRequest":1.569,"test_202_forgetDeviceRequest_rally":1.062,"test_203_forgetDeviceRequest_rallyComponents":9.959,"test_204_Product_State_Changed_Event_rally":3.078,"test_301_productUnavailableEvent":3.308,"test_302_ProductAvailableEvent":7.77,"test_001_getRoomInformationRequest":1.044,"test_002_setRoomNameRequest":1.042,"test_003_setRoomMaxOccupancyRequest":1.044,"test_004_roomInformationChangedEvent":6.101,"test_005_setRoomOccupancyModeRequest":3.14,"test_006_bulkSetRoomInformationRequest":1.042,"test_007_bulkSetRoomInformationRequest_empty_room_info":2.097,"test_008_bulkSetRoomInformationRequest_partial_room_info":2.091,"test_001_getLogiSyncConfigurationRequest":1.049,"test_002_setLogiSyncConfigurationRequest_fullConfig":1.046,"test_003_logiSyncConfigurationChangedEvent":6.095,"test_004_setLogiSyncConfigurationRequest_emptyConfig":1.044,"test_005_setLogiSyncConfigurationRequest_partialConfig":1.044,"test_100_getHostInformationRequest":1.401,"test_001_getLatestFirmwareByProductIdRequest":1.508,"test_001_setRightSightConfigurationResponse_on_call_start":1.048,"test_002_setRightSightConfigurationResponse_off":1.045,"test_003_setRightSightConfigurationResponse_dynamic":1.049,"test_004_RightSightConfigurationChangedEvent_on_call_start_to_dynamic":6.105,"test_101_setAntiFlickerConfigurationRequest_to_NTSC":1.046,"test_102_setAntiFlickerConfigurationRequest_to_PAL":1.042,"test_103_videoSettingsConfigurationChangedEvent_PAL_to_NTSC":6.103,"test_001_setBleConfigurationRequest_off":1.066,"test_002_setBleConfigurationRequest_offRedundant":7.239,"test_003_setBleConfigurationRequest_on":2.61,"test_004_setBleConfigurationRequest_onRedundant":7.231
+			};
+		</script>
+		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/c23457b/v3html/js/extent.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+			
+            
+                $(document).ready(function() {
+                    
+                });
+            
+        
+		</script>
+	</body>
+</html>
